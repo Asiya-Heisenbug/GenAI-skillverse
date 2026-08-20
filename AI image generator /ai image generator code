@@ -1,0 +1,78 @@
+import streamlit as st
+from diffusers import DiffusionPipeline
+import torch
+
+# --------------------------------------------------
+# Page configuration
+# --------------------------------------------------
+
+st.set_page_config(
+    page_title="AI Image Generator",
+    page_icon="🎨",
+    layout="centered"
+)
+
+st.title("🎨 AI Image Generator")
+st.write("Generate an image using a text prompt.")
+
+# --------------------------------------------------
+# Load Stable Diffusion model
+# --------------------------------------------------
+
+@st.cache_resource
+def load_model():
+
+    pipe = DiffusionPipeline.from_pretrained(
+        "stable-diffusion-v1-5/stable-diffusion-v1-5"
+    )
+
+    # Use GPU if available
+    if torch.cuda.is_available():
+        pipe = pipe.to("cuda")
+
+    return pipe
+
+
+# --------------------------------------------------
+# Load model
+# --------------------------------------------------
+
+with st.spinner("Loading AI model..."):
+    pipe = load_model()
+
+# --------------------------------------------------
+# Prompt input
+# --------------------------------------------------
+
+prompt = st.text_input(
+    "Enter your prompt:",
+    "A cute cat sitting in a beautiful garden"
+)
+
+# --------------------------------------------------
+# Generate image
+# --------------------------------------------------
+
+if st.button("🎨 Generate Image"):
+
+    if prompt.strip():
+
+        with st.spinner("Generating image..."):
+
+            result = pipe(
+                prompt,
+                num_inference_steps=50
+            )
+
+            image = result.images[0]
+
+        st.success("Image generated successfully! 🎉")
+
+        st.image(
+            image,
+            caption=prompt,
+            width="stretch"
+        )
+
+    else:
+        st.warning("Please enter a prompt.")
