@@ -1,0 +1,52 @@
+# AI Recipe Chef Chatbot 🧑‍🍳🤖
+
+An intelligent, multi-node conversational AI workflow built using [Dify](https://dify.ai) that classifies culinary intent, handles real-time web recipe scraping, provides ingredient substitutions, and offers nutritional insights.
+
+🔗 **Live App:** [Try Asiya's Recipe Chatbot](https://udify.app/chat/o0F3vAhymmFeVkLa)
+
+---
+
+## 📌 Project Information
+
+* **Developer:** Asiyaa Maryam A
+* **Roll No:** E24AI004
+* **Platform:** Skillverse
+* **Tooling:** Dify Chatflow Architecture
+* **Date Completed:** August 28, 2026
+
+---
+
+## ✨ Features
+
+* **Intent Routing:** Automatically routes user queries into 7 distinct branches using a dedicated LLM Question Classifier.
+* **Live Web Scraping:** Extracts raw URLs from recipe blogs and formats them into clean, structured cooking guides.
+* **Ingredient Substitutions & Recommendations:** Generates smart alternatives when you're missing key ingredients.
+* **Nutritional Insights:** Simple breakdowns of calories, macro distribution, and dietary information.
+* **Guardrail Enforcement:** Handles off-topic queries politely while maintaining focus on culinary subjects.
+
+---
+
+## 🛠️ Architecture & Workflow Nodes
+
+1. **START:** Receives user input query (`sys.query`).
+2. **QUESTION CLASSIFIER:** Categorizes incoming messages:
+   * Class 1: Greeting
+   * Class 2: Recipe
+   * Class 3: Ingredients
+   * Class 4: Substitution
+   * Class 5: Nutrition
+   * Class 6: Unrelated Queries
+   * Class 7: Web Recipe
+3. **WEB SCRAPER:** Processes live URLs and extracts webpage content for recipe links.
+4. **LLM Nodes:** Specialized processing nodes (`GREETING`, `RECIPE`, `INGREDIENTS LLM`, `SUBSTITUTION LLM`, `NUTRITION LLM`, `UNRELATED LLM`, `WEB RECIPE LLM`).
+5. **ANSWER:** Consolidates model outputs into structured markdown for the end user.
+
+---
+
+## 🚀 How to Run Locally / Import into Dify
+
+1. Log into your [Dify Cloud](https://cloud.dify.ai) instance.
+2. Navigate to **Studio ➔ Create from DSL / Import**.
+3. Upload the DSL workflow file (`.yml`) for this project.
+4. Configure your preferred model endpoints.
+5. Click **Publish** and launch the preview or embedded chat.
