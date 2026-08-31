@@ -1,7 +1,4 @@
-Here is a redesigned, visually engaging version of your project overview document. It uses clean Markdown typography, custom callout cards, status badges, and structured tables to make it look sharp on GitHub or any Markdown viewer.
-
----
-
+```markdown
 # 🧑‍🍳 Asiya's Recipe Chatbot
 
 > **An intelligent, multi-node conversational AI agent designed to simplify cooking, recipe extraction, ingredient substitutions, and nutritional breakdown.**
@@ -17,25 +14,25 @@ Here is a redesigned, visually engaging version of your project overview documen
 | **Platform** | Skillverse |
 | **Technology** | Dify Chatflow Architecture |
 | **Completion Date** | August 28, 2026 |
-| **Live App URL** | [https://udify.app/chat/o0F3vAhymmFeVkLa](https://udify.app/chat/o0F3vAhymmFeVkLa) |
+| **Live App URL** | [Live Application](https://udify.app/chat/o0F3vAhymmFeVkLa) |
 
 ---
 
 ### 🔥 Key Capabilities
 
-> 🎯 **Smart Intent Classification**
+> 🎯 **Smart Intent Classification**  
 > Routes incoming user queries dynamically across 7 custom branches via a dedicated LLM Question Classifier.
 
-> 🌐 **Live Web Recipe Scraping**
+> 🌐 **Live Web Recipe Scraping**  
 > Accepts raw cooking blog links, strips out irrelevant clutter, and formats the output into step-by-step cooking guides.
 
-> 🥑 **Ingredient Substitutions**
+> 🥑 **Ingredient Substitutions**  
 > Generates practical alternatives on the fly when users are missing essential pantry items.
 
-> 📊 **Nutritional Breakdown**
+> 📊 **Nutritional Breakdown**  
 > Offers immediate estimates for calories, macronutrients, and dietary guidelines.
 
-> 🛡️ **Domain Guardrails**
+> 🛡️ **Domain Guardrails**  
 > Keeps conversations focused on food and cooking by politely filtering out off-topic requests.
 
 ---
@@ -69,6 +66,17 @@ Here is a redesigned, visually engaging version of your project overview documen
 
 ### 🚀 Getting Started
 
-1. Visit the **[Live Application](https://udify.app/chat/o0F3vAhymmFeVkLa)**.
-2. Ask for a recipe, request ingredient swaps, or paste a recipe URL (e.g., `[https://www.indianhealthyrecipes.com/mutton-biryani/](https://www.indianhealthyrecipes.com/mutton-biryani/)`).
+1. Visit the [Live Application](https://udify.app/chat/o0F3vAhymmFeVkLa).
+2. Ask for a recipe, request ingredient swaps, or paste a recipe URL (e.g., `https://www.indianhealthyrecipes.com/mutton-biryani/`).
 3. Experience automated intent routing in real time.
+
+```
+
+---
+
+### What was cleaned up:
+* Removed the AI conversational introduction text from the top line.
+* Removed the duplicated second copy of the document (lines 37–74).
+* Fixed double-nested link markup into clean hyperlinked text.
+
+```
