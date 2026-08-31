@@ -1,52 +1,74 @@
-# AI Recipe Chef Chatbot 🧑‍🍳🤖
-
-An intelligent, multi-node conversational AI workflow built using [Dify](https://dify.ai) that classifies culinary intent, handles real-time web recipe scraping, provides ingredient substitutions, and offers nutritional insights.
-
-🔗 **Live App:** [Try Asiya's Recipe Chatbot](https://udify.app/chat/o0F3vAhymmFeVkLa)
+Here is a redesigned, visually engaging version of your project overview document. It uses clean Markdown typography, custom callout cards, status badges, and structured tables to make it look sharp on GitHub or any Markdown viewer.
 
 ---
 
-## 📌 Project Information
+# 🧑‍🍳 Asiya's Recipe Chatbot
 
-* **Developer:** Asiyaa Maryam A
-* **Roll No:** E24AI004
-* **Platform:** Skillverse
-* **Tooling:** Dify Chatflow Architecture
-* **Date Completed:** August 28, 2026
+> **An intelligent, multi-node conversational AI agent designed to simplify cooking, recipe extraction, ingredient substitutions, and nutritional breakdown.**
 
 ---
 
-## ✨ Features
+### 📋 Metadata
 
-* **Intent Routing:** Automatically routes user queries into 7 distinct branches using a dedicated LLM Question Classifier.
-* **Live Web Scraping:** Extracts raw URLs from recipe blogs and formats them into clean, structured cooking guides.
-* **Ingredient Substitutions & Recommendations:** Generates smart alternatives when you're missing key ingredients.
-* **Nutritional Insights:** Simple breakdowns of calories, macro distribution, and dietary information.
-* **Guardrail Enforcement:** Handles off-topic queries politely while maintaining focus on culinary subjects.
-
----
-
-## 🛠️ Architecture & Workflow Nodes
-
-1. **START:** Receives user input query (`sys.query`).
-2. **QUESTION CLASSIFIER:** Categorizes incoming messages:
-   * Class 1: Greeting
-   * Class 2: Recipe
-   * Class 3: Ingredients
-   * Class 4: Substitution
-   * Class 5: Nutrition
-   * Class 6: Unrelated Queries
-   * Class 7: Web Recipe
-3. **WEB SCRAPER:** Processes live URLs and extracts webpage content for recipe links.
-4. **LLM Nodes:** Specialized processing nodes (`GREETING`, `RECIPE`, `INGREDIENTS LLM`, `SUBSTITUTION LLM`, `NUTRITION LLM`, `UNRELATED LLM`, `WEB RECIPE LLM`).
-5. **ANSWER:** Consolidates model outputs into structured markdown for the end user.
+| Attribute | Details |
+| --- | --- |
+| **Developer** | Asiyaa Maryam A |
+| **Roll Number** | `E24AI004` |
+| **Platform** | Skillverse |
+| **Technology** | Dify Chatflow Architecture |
+| **Completion Date** | August 28, 2026 |
+| **Live App URL** | [https://udify.app/chat/o0F3vAhymmFeVkLa](https://udify.app/chat/o0F3vAhymmFeVkLa) |
 
 ---
 
-## 🚀 How to Run Locally / Import into Dify
+### 🔥 Key Capabilities
 
-1. Log into your [Dify Cloud](https://cloud.dify.ai) instance.
-2. Navigate to **Studio ➔ Create from DSL / Import**.
-3. Upload the DSL workflow file (`.yml`) for this project.
-4. Configure your preferred model endpoints.
-5. Click **Publish** and launch the preview or embedded chat.
+> 🎯 **Smart Intent Classification**
+> Routes incoming user queries dynamically across 7 custom branches via a dedicated LLM Question Classifier.
+
+> 🌐 **Live Web Recipe Scraping**
+> Accepts raw cooking blog links, strips out irrelevant clutter, and formats the output into step-by-step cooking guides.
+
+> 🥑 **Ingredient Substitutions**
+> Generates practical alternatives on the fly when users are missing essential pantry items.
+
+> 📊 **Nutritional Breakdown**
+> Offers immediate estimates for calories, macronutrients, and dietary guidelines.
+
+> 🛡️ **Domain Guardrails**
+> Keeps conversations focused on food and cooking by politely filtering out off-topic requests.
+
+---
+
+### 🛠️ Architecture & Workflow Pipeline
+
+```text
+[START] ➔ [QUESTION CLASSIFIER] ──┬─ (Class 1) ➔ [GREETING] ─────────────┬➔ [ANSWER]
+                                  ├─ (Class 2) ➔ [RECIPE] ───────────────┤
+                                  ├─ (Class 3) ➔ [INGREDIENTS LLM] ──────┤
+                                  ├─ (Class 4) ➔ [SUBSTITUTION LLM] ─────┤
+                                  ├─ (Class 5) ➔ [NUTRITION LLM] ────────┤
+                                  ├─ (Class 6) ➔ [UNRELATED LLM] ────────┤
+                                  └─ (Class 7) ➔ [WEB SCRAPER] ➔ [LLM] ──┘
+
+```
+
+#### Detailed Node Matrix
+
+| Branch ID | Node Name | Role & Description |
+| --- | --- | --- |
+| `01` | **Greeting** | Welcomes users and introduces assistant capabilities. |
+| `02` | **Recipe** | Generates tailored recipes with cooking instructions and times. |
+| `03` | **Ingredients LLM** | Suggests dishes based on available ingredients. |
+| `04` | **Substitution LLM** | Offers alternative options for missing ingredients. |
+| `05` | **Nutrition LLM** | Provides macro and calorie calculations. |
+| `06` | **Unrelated LLM** | Acts as a guardrail, redirecting non-culinary queries. |
+| `07` | **Web Scraper & LLM** | Extracts content from live URL links and structures the output. |
+
+---
+
+### 🚀 Getting Started
+
+1. Visit the **[Live Application](https://udify.app/chat/o0F3vAhymmFeVkLa)**.
+2. Ask for a recipe, request ingredient swaps, or paste a recipe URL (e.g., `[https://www.indianhealthyrecipes.com/mutton-biryani/](https://www.indianhealthyrecipes.com/mutton-biryani/)`).
+3. Experience automated intent routing in real time.
