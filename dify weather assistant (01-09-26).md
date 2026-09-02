@@ -85,3 +85,10 @@ Humidity: 82%
 Wind Speed: 11.5 km/h
 
 ```
+
+
+<img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/9a618696-c860-4e2d-b970-3822bea83dd5" />
+
+<img width="1361" height="632" alt="image" src="https://github.com/user-attachments/assets/e20b2a27-8348-47f8-9482-e3db72f62409" />
+
+
